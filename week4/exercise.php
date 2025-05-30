@@ -9,8 +9,20 @@ function getUsers() {
 // Get the list of users
 $users = getUsers();
 
-for ($users == 0; $users < 10; $users++) {
-    echo $users[0]['id'];
+for ($i = 0; $i < count($users); $i++) {
+    echo $users[$i]['id'] . "<br>";
+    echo $users[$i]['name'] . "<br>";
+    echo $users[$i]['username'] . "<br>";
+    echo "<a href='mailto:" . $users[$i]['email'] . "'>" . $users[$i]['email'] . "</a><br>";
+
+   
+    $address = $users[$i]['address'];
+
+    echo $address['street'] . ", " . $address['suite'] . "<br>";
+    echo $address['city'] . ", " . $address['zipcode'] . "<br><br>";
 }
+
+
+
 
 ?>
